@@ -2,11 +2,11 @@ from flask import Flask, make_response, jsonify, request
 from pymongo import MongoClient
 from bson import ObjectId
 
+app = Flask(__name__)
+
 client = MongoClient("mongodb://localhost:27017")
 db = client.bizDB
 businesses = db.biz
-
-app = Flask(__name__)
 
 
 @app.route("/", methods=["GET"])
